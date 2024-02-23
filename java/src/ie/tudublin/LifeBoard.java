@@ -125,7 +125,7 @@ public class LifeBoard {
                 p.stroke(200,255, 255);
                 if (board[row][col])
                 {
-                    p.fill(100, 255, 255);
+                    p.fill(255);
                 }
                 else
                 {
@@ -137,6 +137,6 @@ public class LifeBoard {
         
     }
 
-
+    
 
 }
