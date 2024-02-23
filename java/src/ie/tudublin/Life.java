@@ -9,7 +9,7 @@ public class Life extends PApplet {
 
     public void setup()
     {
-        lifeBoard = new LifeBoard(50, 50, this);
+        lifeBoard = new LifeBoard(100, 100, this);
         lifeBoard.randomize();
         colorMode(HSB);
     }
