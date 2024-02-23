@@ -116,6 +116,7 @@ public class LifeBoard {
 
     public void render()
     {
+        p.colorMode(PApplet.HSB, rows, 100, 100);
         for(int row = 0 ; row < rows ; row ++)
         {
             for(int col = 0 ; col < cols ; col ++)
@@ -125,7 +126,7 @@ public class LifeBoard {
                 p.stroke(0);
                 if (board[row][col])
                 {
-                    p.fill(255);
+                    p.fill(row, 100, 100);
                 }
                 else
                 {
