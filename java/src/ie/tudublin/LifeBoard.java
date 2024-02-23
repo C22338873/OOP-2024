@@ -122,7 +122,7 @@ public class LifeBoard {
             {
                 float x = p.map(col, 0, cols, 0, p.width);
                 float y = row * cellHeight;
-                p.stroke(200,255, 255);
+                p.stroke(0);
                 if (board[row][col])
                 {
                     p.fill(255);
