@@ -60,6 +60,28 @@ public class LifeBoard {
         // boolean[][] temp = board;
         // board = next;
         // next = temp;
+        next = new boolean[rows][cols];
+        for(int row = 0 ; row < rows ; row ++)
+        {
+            for(int col = 0 ; col < cols ; col ++)
+            {
+                int aliveNeighbours = countCells(row, col);
+                if (board[row][col]) {
+                    if (aliveNeighbours < 2 || aliveNeighbours > 3) {
+                        next[row][col] = false;
+                    } else {
+                        next[row][col] = true;
+                    }
+                } else {
+                    if (aliveNeighbours == 3) {
+                        next[row][col] = true;
+                    }
+                }
+            }
+        }
+        boolean[][] temp = board;
+        board = next;
+        next = temp;
     }
 
     public void setCell(int row, int col, boolean value)
@@ -81,7 +103,15 @@ public class LifeBoard {
 
     public int countCells(int row, int col)
     {
-        return 0;
+        int count = 0;
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (!(i == 0 && j == 0) && getCell(row + i, col + j)) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 
     public void render()
