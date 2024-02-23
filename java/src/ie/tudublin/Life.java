@@ -25,5 +25,9 @@ public class Life extends PApplet {
         lifeBoard.update();
         lifeBoard.render();
     }
-    
+    public void keyPressed() {
+        if (key == '1') {
+            lifeBoard.randomize(); // Reset the cells
+        }
+    }
 }
